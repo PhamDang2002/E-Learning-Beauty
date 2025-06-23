@@ -17,8 +17,6 @@ import {
   Visibility as VisibilityIcon,
   VisibilityOff as VisibilityOffIcon,
   School as SchoolIcon,
-  Google as GoogleIcon,
-  Facebook as FacebookIcon,
   CheckCircle as CheckIcon,
 } from "@mui/icons-material";
 
@@ -287,24 +285,6 @@ const RegisterPage = () => {
           </div>
 
           {/* Social Register Buttons */}
-          <div className="space-y-3">
-            <Button
-              variant="outlined"
-              fullWidth
-              className="!border-gray-300 !py-3 !text-gray-700 hover:!bg-gray-50"
-              startIcon={<GoogleIcon />}
-            >
-              Continue with Google
-            </Button>
-            <Button
-              variant="outlined"
-              fullWidth
-              className="!border-gray-300 !py-3 !text-gray-700 hover:!bg-gray-50"
-              startIcon={<FacebookIcon />}
-            >
-              Continue with Facebook
-            </Button>
-          </div>
         </div>
 
         {/* Sign In Link */}

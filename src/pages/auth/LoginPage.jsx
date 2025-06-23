@@ -16,8 +16,6 @@ import {
   Visibility as VisibilityIcon,
   VisibilityOff as VisibilityOffIcon,
   School as SchoolIcon,
-  Google as GoogleIcon,
-  Facebook as FacebookIcon,
 } from "@mui/icons-material";
 import { useState } from "react";
 
@@ -197,26 +195,6 @@ const LoginPage = () => {
                 or continue with
               </span>
             </Divider>
-          </div>
-
-          {/* Social Login Buttons */}
-          <div className="space-y-3">
-            <Button
-              variant="outlined"
-              fullWidth
-              className="!border-gray-300 !py-3 !text-gray-700 hover:!bg-gray-50"
-              startIcon={<GoogleIcon />}
-            >
-              Continue with Google
-            </Button>
-            <Button
-              variant="outlined"
-              fullWidth
-              className="!border-gray-300 !py-3 !text-gray-700 hover:!bg-gray-50"
-              startIcon={<FacebookIcon />}
-            >
-              Continue with Facebook
-            </Button>
           </div>
         </div>
 
