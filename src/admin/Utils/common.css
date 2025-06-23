@@ -1,0 +1,340 @@
+/* Admin Layout Styles */
+
+/* Sidebar Styles */
+.admin-sidebar {
+  width: 280px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+  overflow-y: auto;
+  transition: all 0.3s ease;
+}
+
+.sidebar-card {
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* User Profile Section */
+.user-profile-section {
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.user-avatar {
+  width: 80px !important;
+  height: 80px !important;
+  margin: 0 auto 1rem auto !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+  border: 3px solid rgba(255, 255, 255, 0.3) !important;
+  font-size: 2rem !important;
+  font-weight: 700 !important;
+  color: white !important;
+}
+
+.user-info {
+  text-align: center;
+}
+
+.user-name {
+  color: white !important;
+  font-weight: 700 !important;
+  margin-bottom: 0.5rem !important;
+  font-size: 1.1rem !important;
+}
+
+.user-role {
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-size: 0.9rem !important;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+/* Sidebar Dividers */
+.sidebar-divider {
+  background: rgba(255, 255, 255, 0.1) !important;
+  margin: 0.5rem 1rem !important;
+}
+
+/* Navigation Sections */
+.navigation-section {
+  padding: 1rem 0;
+}
+
+.section-title {
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-weight: 600 !important;
+  font-size: 0.75rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  padding: 0 1.5rem 0.5rem 1.5rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* Navigation List */
+.nav-list {
+  padding: 0 !important;
+}
+
+.nav-item {
+  margin: 0.25rem 0;
+}
+
+.nav-button {
+  margin: 0 0.75rem !important;
+  border-radius: 12px !important;
+  padding: 0.75rem 1rem !important;
+  transition: all 0.3s ease !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  text-decoration: none !important;
+}
+
+.nav-button:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: white !important;
+  transform: translateX(4px);
+}
+
+.nav-button.active {
+  background: rgba(255, 255, 255, 0.2) !important;
+  color: white !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation Icons */
+.nav-icon {
+  min-width: 40px !important;
+  margin-right: 0.75rem !important;
+}
+
+.active-icon {
+  color: white !important;
+}
+
+.inactive-icon {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Navigation Text */
+.nav-label {
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  color: inherit !important;
+}
+
+.active-text {
+  color: white !important;
+}
+
+.nav-description {
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-size: 0.75rem !important;
+  margin-top: 0.25rem !important;
+}
+
+/* Bottom Navigation */
+.bottom-navigation {
+  margin-top: auto;
+  padding-bottom: 1rem;
+}
+
+/* Sidebar Footer */
+.sidebar-footer {
+  padding: 1rem 1.5rem;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: auto;
+}
+
+.footer-text {
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-size: 0.75rem !important;
+  display: block;
+  margin-bottom: 0.25rem !important;
+}
+
+.footer-version {
+  color: rgba(255, 255, 255, 0.4) !important;
+  font-size: 0.7rem !important;
+  font-family: "Courier New", monospace;
+}
+
+/* Dashboard Admin Layout */
+.dashboard-admin {
+  display: flex;
+  min-height: 100vh;
+  margin-left: 280px;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  transition: margin-left 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .admin-sidebar {
+    width: 240px;
+  }
+
+  .dashboard-admin {
+    margin-left: 240px;
+  }
+
+  .user-avatar {
+    width: 60px !important;
+    height: 60px !important;
+    font-size: 1.5rem !important;
+  }
+
+  .user-name {
+    font-size: 1rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-sidebar {
+    width: 60px;
+    transform: translateX(-100%);
+  }
+
+  .admin-sidebar.open {
+    transform: translateX(0);
+  }
+
+  .dashboard-admin {
+    margin-left: 0;
+  }
+
+  .user-profile-section {
+    padding: 1rem 0.5rem;
+  }
+
+  .user-avatar {
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 1.2rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .user-info {
+    display: none;
+  }
+
+  .section-title {
+    display: none;
+  }
+
+  .nav-button {
+    margin: 0 0.25rem !important;
+    padding: 0.75rem !important;
+    justify-content: center !important;
+  }
+
+  .nav-icon {
+    margin-right: 0 !important;
+    min-width: auto !important;
+  }
+
+  .nav-label,
+  .nav-description {
+    display: none !important;
+  }
+
+  .sidebar-footer {
+    display: none;
+  }
+}
+
+/* Mobile Toggle Button */
+.sidebar-toggle {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1001;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: white !important;
+  border-radius: 50% !important;
+  width: 48px !important;
+  height: 48px !important;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+@media (max-width: 768px) {
+  .sidebar-toggle {
+    display: flex;
+  }
+}
+
+/* Animation Classes */
+.slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Custom Scrollbar for Sidebar */
+.admin-sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.admin-sidebar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.admin-sidebar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+.admin-sidebar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Hover Effects */
+.nav-button:hover .nav-icon {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+
+.nav-button.active .nav-icon {
+  transform: scale(1.1);
+}
+
+/* Focus States */
+.nav-button:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+}
+
+/* Loading States */
+.nav-button.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .dashboard-admin {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  }
+}

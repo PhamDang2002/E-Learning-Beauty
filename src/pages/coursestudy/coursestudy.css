@@ -1,0 +1,102 @@
+.course-study-page {
+  padding: 50px 0;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+
+  h2 {
+    font-size: 24px;
+    color: #8a4baf;
+    text-align: center;
+  }
+
+  h4 {
+    font-size: 21px;
+    color: #8a4baf;
+    text-align: center;
+  }
+
+  h5 {
+    font-size: 20px;
+    color: #8a4baf;
+    text-align: center;
+  }
+
+  a {
+    text-decoration: none;
+    background-color: white;
+    padding: 5px 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+}
+
+/* Custom scrollbar for the course study page */
+.course-study-page::-webkit-scrollbar {
+  width: 8px;
+}
+
+.course-study-page::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.course-study-page::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.course-study-page::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Animation for course study sections */
+.course-study-page section {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .course-study-page .container-custom {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Video player styling */
+.course-study-page video {
+  border-radius: 1rem;
+}
+
+/* Card hover effects */
+.course-study-page .card:hover {
+  transform: translateY(-2px);
+}
+
+/* Progress bar styling */
+.course-study-page .MuiLinearProgress-root {
+  border-radius: 9999px;
+}
+
+/* Stats cards animation */
+.course-study-page .stats-card {
+  transition: all 0.3s ease;
+}
+
+.course-study-page .stats-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.15);
+}

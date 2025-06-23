@@ -1,0 +1,91 @@
+.student-dashboard {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+/* Custom scrollbar for the dashboard */
+.student-dashboard::-webkit-scrollbar {
+  width: 8px;
+}
+
+.student-dashboard::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.student-dashboard::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.student-dashboard::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Animation for dashboard sections */
+.student-dashboard section {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .student-dashboard .container-custom {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Progress bar styling */
+.student-dashboard .MuiLinearProgress-root {
+  border-radius: 9999px;
+}
+
+/* Card hover effects */
+.student-dashboard .card:hover {
+  transform: translateY(-2px);
+}
+
+/* Stats cards animation */
+.student-dashboard .card-hover {
+  transition: all 0.3s ease;
+}
+
+.student-dashboard .card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.15);
+}
+
+/* Activity timeline styling */
+.student-dashboard .activity-item {
+  position: relative;
+}
+
+.student-dashboard .activity-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 32px;
+  bottom: -16px;
+  width: 2px;
+  background: #e5e7eb;
+}
+
+/* Learning goals progress */
+.student-dashboard .goal-progress {
+  transition: all 0.3s ease;
+}
+
+.student-dashboard .goal-progress:hover {
+  transform: scale(1.02);
+}

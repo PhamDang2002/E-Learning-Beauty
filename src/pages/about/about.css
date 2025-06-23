@@ -1,0 +1,88 @@
+.about {
+  padding: 80px 0;
+  text-align: center;
+  min-height: 100vh;
+
+  .about-content {
+    max-width: 800px;
+    margin: 0 auto;
+
+    h2 {
+      font-size: 32px;
+      color: #8a4baf;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      color: #333;
+      line-height: 1.6;
+    }
+  }
+}
+
+/* Custom scrollbar for the about page */
+.about::-webkit-scrollbar {
+  width: 8px;
+}
+
+.about::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.about::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.about::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Animation for sections */
+.about section {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .about .container-custom {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Hover effects for team cards */
+.about .card:hover {
+  transform: translateY(-4px);
+}
+
+/* Gradient text animation */
+.about .gradient-text {
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

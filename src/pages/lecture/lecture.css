@@ -1,0 +1,192 @@
+.lecture-page {
+  display: flex;
+  justify-content: space-between;
+  min-height: 100vh;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .left {
+    width: 70%;
+    padding: 10px;
+    align-items: center;
+
+    @media (max-width: 768px) {
+      width: 90%;
+    }
+  }
+
+  .right {
+    width: 30%;
+
+    .lecture-form {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0px, 2px, 4px, rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: auto;
+
+      h2 {
+        font-size: 24px;
+        color: #8a4baf;
+        margin-bottom: 15px;
+      }
+
+      form {
+        text-align: left;
+
+        label {
+          display: block;
+          margin-bottom: 5px;
+          font-size: 14px;
+          color: #333;
+        }
+
+        input {
+          width: 92%;
+          padding: 10px;
+          margin-bottom: 15px;
+          border: 1px solid black;
+          border-radius: 5px;
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      width: 80%;
+      margin-bottom: 10px;
+    }
+
+    .lecture-number {
+      background-color: #fff;
+      padding: 10px;
+      border: 1px solid black;
+      margin-top: 10px;
+      border-radius: 5px;
+      text-align: center;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #8a4baf;
+        color: white;
+      }
+    }
+
+    .active {
+      background-color: #8a4baf;
+      color: white;
+    }
+  }
+}
+
+.progress {
+  width: 20%;
+  background-color: #333;
+  padding: 6px;
+  border-radius: 5px;
+  margin: 3px auto;
+  text-align: center;
+  color: white;
+}
+
+/* Custom scrollbar for the lecture page */
+.lecture-page::-webkit-scrollbar {
+  width: 8px;
+}
+
+.lecture-page::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.lecture-page::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.lecture-page::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Animation for lecture sections */
+.lecture-page section {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .lecture-page .container-custom {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Video player styling */
+.lecture-page video {
+  border-radius: 1rem;
+}
+
+/* Card hover effects */
+.lecture-page .card:hover {
+  transform: translateY(-2px);
+}
+
+/* Progress bar styling */
+.lecture-page .MuiLinearProgress-root {
+  border-radius: 9999px;
+}
+
+/* Lecture list item hover effects */
+.lecture-page .lecture-item {
+  transition: all 0.3s ease;
+}
+
+.lecture-page .lecture-item:hover {
+  transform: translateX(4px);
+}
+
+/* Dialog styling */
+.lecture-page .MuiDialog-paper {
+  border-radius: 1rem;
+}
+
+/* File input styling */
+.lecture-page input[type="file"] {
+  transition: all 0.3s ease;
+}
+
+.lecture-page input[type="file"]:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Video preview styling */
+.lecture-page .video-preview {
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+/* Stats cards animation */
+.lecture-page .stats-card {
+  transition: all 0.3s ease;
+}
+
+.lecture-page .stats-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
+}
