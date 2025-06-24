@@ -62,7 +62,7 @@ const Header = ({ response }) => {
           navigate(`/account`);
           handleMenuClose();
         }}
-        className="hover:bg-primary-50 flex items-center gap-3 px-4 py-3 transition-colors"
+        className="flex items-center gap-3 px-4 py-3 transition-colors hover:bg-primary-50"
       >
         <PersonIcon className="text-primary-600" />
         <span className="font-medium">Profile</span>
@@ -72,7 +72,7 @@ const Header = ({ response }) => {
           logOut();
           handleMenuClose();
         }}
-        className="hover:bg-error-50 text-error-600 flex items-center gap-3 px-4 py-3 transition-colors"
+        className="flex items-center gap-3 px-4 py-3 text-error-600 transition-colors hover:bg-error-50"
       >
         <LogoutIcon />
         <span className="font-medium">Logout</span>
@@ -96,7 +96,7 @@ const Header = ({ response }) => {
         className="glass-effect border-b border-white/20 !bg-white/90 backdrop-blur-md"
         elevation={0}
       >
-        <Toolbar className="container-custom !min-h-[80px] justify-between">
+        <Toolbar className="container-custom !min-h-[80px] !w-full justify-between">
           {/* Logo */}
           <div className="flex items-center gap-4">
             <Link to="/" className="group flex items-center gap-3">
@@ -105,7 +105,7 @@ const Header = ({ response }) => {
                   src="/weconnect-logo.png"
                   className="h-12 w-12 transition-transform group-hover:scale-110"
                 />
-                <div className="bg-primary-500/20 group-hover:bg-primary-500/30 absolute inset-0 rounded-full blur-xl transition-all duration-300"></div>
+                <div className="absolute inset-0 rounded-full bg-primary-500/20 blur-xl transition-all duration-300 group-hover:bg-primary-500/30"></div>
               </div>
               <span className="gradient-text hidden text-xl font-bold sm:block">
                 WeConnect
@@ -113,29 +113,28 @@ const Header = ({ response }) => {
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden items-center gap-6 md:flex">
-            {navItems.map((item) => {
-              const Icon = item.icon;
-              return (
-                <Link
-                  key={item.path}
-                  to={item.path}
-                  className={`flex items-center gap-2 rounded-xl px-4 py-2 font-medium transition-all duration-200 ${
-                    isActive(item.path)
-                      ? "bg-primary-100 text-primary-700 shadow-soft"
-                      : "hover:text-primary-600 hover:bg-primary-50 text-gray-600"
-                  }`}
-                >
-                  <Icon className="text-lg" />
-                  {item.label}
-                </Link>
-              );
-            })}
-          </div>
-
           {/* User Actions */}
           <div className="flex items-center gap-4">
+            {/* Desktop Navigation */}
+            <div className="hidden items-center gap-6 md:flex">
+              {navItems.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    className={`flex items-center gap-2 rounded-xl px-4 py-2 font-medium transition-all duration-200 ${
+                      isActive(item.path)
+                        ? "bg-primary-100 text-primary-700 shadow-soft"
+                        : "text-gray-600 hover:bg-primary-50 hover:text-primary-600"
+                    }`}
+                  >
+                    <Icon className="text-lg" />
+                    {item.label}
+                  </Link>
+                );
+              })}
+            </div>
             {response?.data?.user?._id ? (
               <div className="flex items-center gap-3">
                 <IconButton
@@ -147,10 +146,10 @@ const Header = ({ response }) => {
                     overlap="circular"
                     anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
                     badgeContent={
-                      <div className="bg-success-500 h-3 w-3 rounded-full border-2 border-white"></div>
+                      <div className="h-3 w-3 rounded-full border-2 border-white bg-success-500"></div>
                     }
                   >
-                    <Avatar className="from-primary-500 to-primary-600 shadow-medium group-hover:shadow-glow !bg-gradient-to-br font-semibold !text-white transition-all duration-300">
+                    <Avatar className="!bg-gradient-to-br from-primary-500 to-primary-600 font-semibold !text-white shadow-medium transition-all duration-300 group-hover:shadow-glow">
                       {userInfo?.name?.[0]?.toUpperCase()}
                     </Avatar>
                   </Badge>
@@ -199,7 +198,7 @@ const Header = ({ response }) => {
             className="absolute inset-0 bg-black/20 backdrop-blur-sm"
             onClick={() => setMobileMenuOpen(false)}
           />
-          <div className="shadow-large absolute right-0 top-0 h-full w-64 border-l border-gray-100 bg-white p-6">
+          <div className="absolute right-0 top-0 h-full w-64 border-l border-gray-100 bg-white p-6 shadow-large">
             <div className="flex flex-col gap-4">
               {navItems.map((item) => {
                 const Icon = item.icon;
@@ -211,7 +210,7 @@ const Header = ({ response }) => {
                     className={`flex items-center gap-3 rounded-xl px-4 py-3 font-medium transition-all duration-200 ${
                       isActive(item.path)
                         ? "bg-primary-100 text-primary-700"
-                        : "hover:text-primary-600 hover:bg-primary-50 text-gray-600"
+                        : "text-gray-600 hover:bg-primary-50 hover:text-primary-600"
                     }`}
                   >
                     <Icon className="text-lg" />
