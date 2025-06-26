@@ -11,8 +11,6 @@ import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import * as yup from "yup";
 import {
-  Email as EmailIcon,
-  Lock as LockIcon,
   Visibility as VisibilityIcon,
   VisibilityOff as VisibilityOffIcon,
   School as SchoolIcon,
@@ -82,11 +80,11 @@ const LoginPage = () => {
   ]);
 
   return (
-    <div className="from-primary-50 to-secondary-50 flex min-h-screen items-center justify-center bg-gradient-to-br via-white p-4">
+    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-primary-50 via-white to-secondary-50 p-4">
       <div className="w-full max-w-md">
         {/* Header */}
         <div className="mb-8 text-center">
-          <div className="from-primary-500 to-primary-600 shadow-medium mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br">
+          <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary-500 to-primary-600 shadow-medium">
             <SchoolIcon className="text-3xl text-white" />
           </div>
           <h1 className="mb-2 text-3xl font-bold text-gray-900">
@@ -106,9 +104,6 @@ const LoginPage = () => {
                 Email Address
               </label>
               <div className="relative">
-                <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                  <EmailIcon className="text-gray-400" />
-                </div>
                 <FormField
                   name="email"
                   control={control}
@@ -119,7 +114,7 @@ const LoginPage = () => {
                 />
               </div>
               {errors["email"] && (
-                <p className="text-error-600 text-sm">
+                <p className="text-sm text-error-600">
                   {errors["email"].message}
                 </p>
               )}
@@ -131,9 +126,6 @@ const LoginPage = () => {
                 Password
               </label>
               <div className="relative">
-                <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                  <LockIcon className="text-gray-400" />
-                </div>
                 <FormField
                   name="password"
                   control={control}
@@ -156,7 +148,7 @@ const LoginPage = () => {
                 </button>
               </div>
               {errors["password"] && (
-                <p className="text-error-600 text-sm">
+                <p className="text-sm text-error-600">
                   {errors["password"].message}
                 </p>
               )}
@@ -166,7 +158,7 @@ const LoginPage = () => {
             <div className="text-right">
               <Link
                 to="/forgot"
-                className="text-primary-600 hover:text-primary-700 text-sm font-medium transition-colors"
+                className="text-sm font-medium text-primary-600 transition-colors hover:text-primary-700"
               >
                 Forgot your password?
               </Link>
@@ -204,7 +196,7 @@ const LoginPage = () => {
             Don&apos;t have an account?{" "}
             <Link
               to="/register"
-              className="text-primary-600 hover:text-primary-700 font-semibold transition-colors"
+              className="font-semibold text-primary-600 transition-colors hover:text-primary-700"
             >
               Sign up for free
             </Link>

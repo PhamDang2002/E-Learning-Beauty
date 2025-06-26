@@ -11,13 +11,9 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { activationToken } from "@redux/slices/authSlice";
 import {
-  Person as PersonIcon,
-  Email as EmailIcon,
-  Lock as LockIcon,
   Visibility as VisibilityIcon,
   VisibilityOff as VisibilityOffIcon,
   School as SchoolIcon,
-  CheckCircle as CheckIcon,
 } from "@mui/icons-material";
 
 const RegisterPage = () => {
@@ -87,11 +83,11 @@ const RegisterPage = () => {
   ];
 
   return (
-    <div className="from-primary-50 to-secondary-50 flex min-h-screen items-center justify-center bg-gradient-to-br via-white p-4">
+    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-primary-50 via-white to-secondary-50 p-4">
       <div className="w-full max-w-md">
         {/* Header */}
         <div className="mb-8 text-center">
-          <div className="from-primary-500 to-primary-600 shadow-medium mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br">
+          <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary-500 to-primary-600 shadow-medium">
             <SchoolIcon className="text-3xl text-white" />
           </div>
           <h1 className="mb-2 text-3xl font-bold text-gray-900">
@@ -111,9 +107,6 @@ const RegisterPage = () => {
                 Full Name
               </label>
               <div className="relative">
-                <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                  <PersonIcon className="text-gray-400" />
-                </div>
                 <FormField
                   name="name"
                   control={control}
@@ -124,7 +117,7 @@ const RegisterPage = () => {
                 />
               </div>
               {errors["name"] && (
-                <p className="text-error-600 text-sm">
+                <p className="text-sm text-error-600">
                   {errors["name"].message}
                 </p>
               )}
@@ -136,9 +129,6 @@ const RegisterPage = () => {
                 Email Address
               </label>
               <div className="relative">
-                <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                  <EmailIcon className="text-gray-400" />
-                </div>
                 <FormField
                   name="email"
                   control={control}
@@ -149,7 +139,7 @@ const RegisterPage = () => {
                 />
               </div>
               {errors["email"] && (
-                <p className="text-error-600 text-sm">
+                <p className="text-sm text-error-600">
                   {errors["email"].message}
                 </p>
               )}
@@ -161,9 +151,6 @@ const RegisterPage = () => {
                 Password
               </label>
               <div className="relative">
-                <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                  <LockIcon className="text-gray-400" />
-                </div>
                 <FormField
                   name="password"
                   control={control}
@@ -186,7 +173,7 @@ const RegisterPage = () => {
                 </button>
               </div>
               {errors["password"] && (
-                <p className="text-error-600 text-sm">
+                <p className="text-sm text-error-600">
                   {errors["password"].message}
                 </p>
               )}
@@ -201,9 +188,6 @@ const RegisterPage = () => {
                 <div className="space-y-1">
                   {passwordRequirements.map((req, index) => (
                     <div key={index} className="flex items-center gap-2">
-                      <CheckIcon
-                        className={`text-sm ${req.met ? "text-success-500" : "text-gray-300"}`}
-                      />
                       <span
                         className={`text-xs ${req.met ? "text-success-600" : "text-gray-500"}`}
                       >
@@ -221,9 +205,6 @@ const RegisterPage = () => {
                 Confirm Password
               </label>
               <div className="relative">
-                <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                  <LockIcon className="text-gray-400" />
-                </div>
                 <FormField
                   name="confirmPassword"
                   control={control}
@@ -246,7 +227,7 @@ const RegisterPage = () => {
                 </button>
               </div>
               {errors["confirmPassword"] && (
-                <p className="text-error-600 text-sm">
+                <p className="text-sm text-error-600">
                   {errors["confirmPassword"].message}
                 </p>
               )}
@@ -293,7 +274,7 @@ const RegisterPage = () => {
             Already have an account?{" "}
             <Link
               to="/login"
-              className="text-primary-600 hover:text-primary-700 font-semibold transition-colors"
+              className="font-semibold text-primary-600 transition-colors hover:text-primary-700"
             >
               Sign in here
             </Link>
