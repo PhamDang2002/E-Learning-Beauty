@@ -63,3 +63,64 @@
 .course-card::-webkit-scrollbar-thumb:hover {
   background: #a8a8a8;
 }
+
+@media (max-width: 640px) {
+  .course-card {
+    padding: 12px;
+    border-radius: 8px;
+  }
+  .course-image {
+    height: 140px;
+    border-radius: 8px;
+  }
+  h3 {
+    font-size: 16px;
+  }
+  p {
+    font-size: 12px;
+  }
+}
+@media (min-width: 641px) and (max-width: 1024px) {
+  .course-card {
+    padding: 16px;
+    border-radius: 10px;
+  }
+  .course-image {
+    height: 180px;
+    border-radius: 10px;
+  }
+  h3 {
+    font-size: 18px;
+  }
+  p {
+    font-size: 14px;
+  }
+}
+@media (min-width: 1025px) {
+  .course-card {
+    padding: 20px;
+    border-radius: 12px;
+  }
+  .course-image {
+    height: 220px;
+    border-radius: 12px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+  p {
+    font-size: 16px;
+  }
+}
+
+/* Đảm bảo nút không bị viết hoa toàn bộ và không tràn chữ */
+.btn-primary,
+.btn-danger,
+.btn-success {
+  text-transform: none !important;
+  min-width: 100px;
+  white-space: nowrap;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+  font-size: 1rem !important;
+}

@@ -63,29 +63,29 @@ const CourseCard = ({ course, courses, setCourses }) => {
         <div className="absolute right-4 top-4">
           <Chip
             label={currencyFormatter(course.price, "VND")}
-            className="!text-primary-600 !shadow-medium !bg-white !font-semibold"
+            className="!bg-white !font-semibold !text-primary-600 !shadow-medium"
             size="small"
           />
         </div>
 
         {/* Play Button Overlay */}
         <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-          <div className="shadow-large flex h-16 w-16 items-center justify-center rounded-full bg-white/90">
-            <PlayIcon className="text-primary-600 text-2xl" />
+          <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90 shadow-large">
+            <PlayIcon className="text-2xl text-primary-600" />
           </div>
         </div>
       </div>
 
       {/* Course Content */}
-      <div className="space-y-4 p-6">
+      <div className="flex-col space-y-4 p-6">
         {/* Course Title */}
-        <h3 className="group-hover:text-primary-600 line-clamp-2 text-xl font-bold text-gray-900 transition-colors duration-200">
+        <h3 className="line-clamp-2 text-xl font-bold text-gray-900 transition-colors duration-200 group-hover:text-primary-600">
           {course.title}
         </h3>
 
         {/* Instructor */}
         <div className="flex items-center gap-3">
-          <Avatar className="!bg-primary-100 !text-primary-600 !h-8 !w-8 !text-sm">
+          <Avatar className="!h-8 !w-8 !bg-primary-100 !text-sm !text-primary-600">
             <PersonIcon className="!text-sm" />
           </Avatar>
           <div>
@@ -94,14 +94,14 @@ const CourseCard = ({ course, courses, setCourses }) => {
             </p>
             <p className="text-xs text-gray-500">Instructor</p>
           </div>
+          <div className="flex items-center gap-1">
+            <TimeIcon className="!text-gray-400" />
+            <span className="!text-gray-500">{course.duration} weeks</span>
+          </div>
         </div>
 
         {/* Course Stats */}
         <div className="flex items-center justify-between text-sm text-gray-600">
-          <div className="flex items-center gap-1">
-            <TimeIcon className="text-gray-400" />
-            <span>{course.duration} weeks</span>
-          </div>
           <div className="flex items-center gap-1">
             <StarIcon className="text-warning-500" />
             <span>{getRandomRating()}</span>
@@ -156,10 +156,10 @@ const CourseCard = ({ course, courses, setCourses }) => {
                 <Button
                   variant="contained"
                   onClick={() => navigate(`/course/study/${course._id}`)}
-                  className="btn-primary !flex-1"
+                  className="btn-primary flex-1"
                   startIcon={<PlayIcon />}
                 >
-                  Study Course
+                  Study
                 </Button>
               )}
             </>
@@ -177,7 +177,7 @@ const CourseCard = ({ course, courses, setCourses }) => {
           {data && data.role === "admin" && (
             <Button
               variant="contained"
-              className="btn-danger !px-4"
+              className="btn-danger flex-1"
               onClick={deleteHandler}
               startIcon={<DeleteIcon />}
             >

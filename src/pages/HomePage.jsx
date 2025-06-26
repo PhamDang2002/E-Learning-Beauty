@@ -22,15 +22,15 @@ function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="from-primary-50 to-secondary-50 relative overflow-hidden bg-gradient-to-br via-white">
-        <div className="bg-hero-pattern absolute inset-0 opacity-30"></div>
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50">
+        <div className="absolute inset-0 bg-hero-pattern opacity-30"></div>
         <div className="container-custom section-padding relative">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             {/* Hero Content */}
             <div className="animate-fade-in space-y-8">
               <div className="space-y-4">
-                <div className="bg-primary-100 text-primary-700 inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium">
-                  <span className="bg-primary-500 animate-pulse-gentle h-2 w-2 rounded-full"></span>
+                <div className="inline-flex items-center gap-2 rounded-full bg-primary-100 px-4 py-2 text-sm font-medium text-primary-700">
+                  <span className="h-2 w-2 animate-pulse-gentle rounded-full bg-primary-500"></span>
                   Transform Your Future with Online Learning
                 </div>
                 <h1 className="text-5xl font-bold leading-tight lg:text-6xl">
@@ -61,6 +61,7 @@ function HomePage() {
                   size="large"
                   className="btn-secondary !px-8 !py-4 !text-lg"
                   startIcon={<PlayIcon />}
+                  onClick={() => navigate("/about")}
                 >
                   Watch Demo
                 </Button>
@@ -70,11 +71,11 @@ function HomePage() {
             {/* Hero Visual */}
             <div className="relative">
               <div className="relative z-10">
-                <div className="from-primary-500 to-secondary-600 shadow-large rounded-3xl bg-gradient-to-br p-8">
-                  <div className="shadow-medium rounded-2xl bg-white p-6">
+                <div className="rounded-3xl bg-gradient-to-br from-primary-500 to-secondary-600 p-8 shadow-large">
+                  <div className="rounded-2xl bg-white p-6 shadow-medium">
                     <div className="mb-6 flex items-center gap-4">
-                      <div className="bg-primary-100 flex h-12 w-12 items-center justify-center rounded-xl">
-                        <SchoolIcon className="text-primary-600 text-xl" />
+                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary-100">
+                        <SchoolIcon className="text-xl text-primary-600" />
                       </div>
                       <div>
                         <h3 className="font-semibold text-gray-900">
@@ -87,19 +88,19 @@ function HomePage() {
                     </div>
                     <div className="space-y-3">
                       <div className="flex items-center gap-3">
-                        <div className="bg-success-500 h-3 w-3 rounded-full"></div>
+                        <div className="h-3 w-3 rounded-full bg-success-500"></div>
                         <span className="text-sm text-gray-700">
                           Expert instructors
                         </span>
                       </div>
                       <div className="flex items-center gap-3">
-                        <div className="bg-success-500 h-3 w-3 rounded-full"></div>
+                        <div className="h-3 w-3 rounded-full bg-success-500"></div>
                         <span className="text-sm text-gray-700">
                           Flexible learning schedule
                         </span>
                       </div>
                       <div className="flex items-center gap-3">
-                        <div className="bg-success-500 h-3 w-3 rounded-full"></div>
+                        <div className="h-3 w-3 rounded-full bg-success-500"></div>
                         <span className="text-sm text-gray-700">
                           Certificate upon completion
                         </span>
@@ -110,14 +111,14 @@ function HomePage() {
               </div>
 
               {/* Floating Elements */}
-              <div className="bg-secondary-100 animate-bounce-gentle absolute -right-4 -top-4 flex h-20 w-20 items-center justify-center rounded-2xl">
-                <StarIcon className="text-secondary-600 text-2xl" />
+              <div className="absolute -right-4 -top-4 flex h-20 w-20 animate-bounce-gentle items-center justify-center rounded-2xl bg-secondary-100">
+                <StarIcon className="text-2xl text-secondary-600" />
               </div>
               <div
-                className="bg-primary-100 animate-bounce-gentle absolute -bottom-4 -left-4 flex h-16 w-16 items-center justify-center rounded-2xl"
+                className="absolute -bottom-4 -left-4 flex h-16 w-16 animate-bounce-gentle items-center justify-center rounded-2xl bg-primary-100"
                 style={{ animationDelay: "1s" }}
               >
-                <TrendingIcon className="text-primary-600 text-xl" />
+                <TrendingIcon className="text-xl text-primary-600" />
               </div>
             </div>
           </div>
@@ -136,8 +137,8 @@ function HomePage() {
                   className="animate-slide-up space-y-3 text-center"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <div className="from-primary-100 to-primary-200 shadow-soft mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br">
-                    <Icon className="text-primary-600 text-2xl" />
+                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary-100 to-primary-200 shadow-soft">
+                    <Icon className="text-2xl text-primary-600" />
                   </div>
                   <div>
                     <div className="text-3xl font-bold text-gray-900">
@@ -193,7 +194,7 @@ function HomePage() {
                   className="card card-hover animate-slide-up space-y-4 p-8 text-center"
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
-                  <div className="from-primary-500 to-primary-600 shadow-medium mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br">
+                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary-500 to-primary-600 shadow-medium">
                     <Icon className="text-2xl text-white" />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900">
@@ -224,20 +225,20 @@ function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="from-primary-600 to-secondary-600 bg-gradient-to-r py-16">
+      <section className="bg-gradient-to-r from-primary-600 to-secondary-600 py-16">
         <div className="container-custom text-center">
           <div className="mx-auto max-w-3xl space-y-8">
             <h2 className="text-4xl font-bold text-white">
               Ready to Start Your Learning Journey?
             </h2>
-            <p className="text-primary-100 text-xl">
+            <p className="text-xl text-primary-100">
               Join thousands of learners and unlock your potential today.
             </p>
             <Button
               variant="contained"
               size="large"
               onClick={() => navigate("/courses")}
-              className="!text-primary-600 shadow-large !bg-white !px-8 !py-4 !text-lg hover:!bg-gray-100"
+              className="!bg-white !px-8 !py-4 !text-lg !text-primary-600 shadow-large hover:!bg-gray-100"
               startIcon={<SchoolIcon />}
             >
               Get Started Now

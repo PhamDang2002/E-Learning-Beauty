@@ -70,7 +70,7 @@ const About = () => {
   return (
     <div className="about">
       {/* Hero Section */}
-      <section className="from-primary-600 to-secondary-600 bg-gradient-to-r py-20">
+      <section className="bg-gradient-to-r from-primary-600 to-secondary-600 py-20">
         <div className="container-custom text-center">
           <div className="mx-auto max-w-4xl space-y-8">
             <div className="inline-flex items-center gap-2 rounded-full bg-white/20 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm">
@@ -81,7 +81,7 @@ const About = () => {
               Empowering Learning
               <span className="block">Through Technology</span>
             </h1>
-            <p className="text-primary-100 mx-auto max-w-3xl text-xl leading-relaxed">
+            <p className="mx-auto max-w-3xl text-xl leading-relaxed text-primary-100">
               We are dedicated to providing high-quality online courses that
               help individuals learn, grow, and excel in their desired fields.
               Our experienced instructors ensure that each course is tailored
@@ -92,7 +92,7 @@ const About = () => {
                 variant="contained"
                 size="large"
                 onClick={() => navigate("/courses")}
-                className="!text-primary-600 !bg-white !px-8 !py-3 hover:!bg-gray-100"
+                className="!bg-white !px-8 !py-3 !text-primary-600 hover:!bg-gray-100"
               >
                 Explore Courses
               </Button>
@@ -100,6 +100,7 @@ const About = () => {
                 variant="outlined"
                 size="large"
                 className="!border-white !text-white hover:!bg-white/10"
+                onClick={() => navigate("/courses")}
               >
                 Learn More
               </Button>
@@ -120,8 +121,8 @@ const About = () => {
                   className="animate-slide-up space-y-3 text-center"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <div className="from-primary-100 to-primary-200 shadow-soft mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br">
-                    <Icon className="text-primary-600 text-2xl" />
+                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary-100 to-primary-200 shadow-soft">
+                    <Icon className="text-2xl text-primary-600" />
                   </div>
                   <div>
                     <div className="text-3xl font-bold text-gray-900">
@@ -143,7 +144,7 @@ const About = () => {
         <div className="container-custom">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div className="space-y-6">
-              <div className="bg-primary-100 text-primary-700 inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium">
+              <div className="inline-flex items-center gap-2 rounded-full bg-primary-100 px-4 py-2 text-sm font-medium text-primary-700">
                 <LightbulbIcon />
                 Our Mission
               </div>
@@ -164,18 +165,18 @@ const About = () => {
                   "Certified courses recognized by employers worldwide",
                 ].map((item, index) => (
                   <div key={index} className="flex items-center gap-3">
-                    <CheckIcon className="text-success-500 text-xl" />
+                    <CheckIcon className="text-xl text-success-500" />
                     <span className="text-gray-700">{item}</span>
                   </div>
                 ))}
               </div>
             </div>
             <div className="relative">
-              <div className="from-primary-500 to-secondary-600 shadow-large rounded-3xl bg-gradient-to-br p-8">
-                <div className="shadow-medium rounded-2xl bg-white p-6">
+              <div className="rounded-3xl bg-gradient-to-br from-primary-500 to-secondary-600 p-8 shadow-large">
+                <div className="rounded-2xl bg-white p-6 shadow-medium">
                   <div className="space-y-4 text-center">
-                    <div className="bg-primary-100 mx-auto flex h-16 w-16 items-center justify-center rounded-2xl">
-                      <SchoolIcon className="text-primary-600 text-2xl" />
+                    <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-primary-100">
+                      <SchoolIcon className="text-2xl text-primary-600" />
                     </div>
                     <h3 className="text-xl font-semibold text-gray-900">
                       Learning Made Simple
@@ -214,7 +215,7 @@ const About = () => {
                   className="card card-hover animate-slide-up space-y-4 p-8 text-center"
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
-                  <div className="from-primary-500 to-primary-600 shadow-medium mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br">
+                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary-500 to-primary-600 shadow-medium">
                     <Icon className="text-2xl text-white" />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900">
@@ -251,13 +252,13 @@ const About = () => {
                 <Avatar
                   src={member.image}
                   alt={member.name}
-                  className="!ring-primary-100 !mx-auto !h-24 !w-24 !ring-4"
+                  className="!mx-auto !h-24 !w-24 !ring-4 !ring-primary-100"
                 />
                 <div>
                   <h3 className="text-xl font-semibold text-gray-900">
                     {member.name}
                   </h3>
-                  <p className="text-primary-600 font-medium">{member.role}</p>
+                  <p className="font-medium text-primary-600">{member.role}</p>
                 </div>
                 <p className="leading-relaxed text-gray-600">{member.bio}</p>
               </div>
@@ -267,20 +268,20 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="from-primary-600 to-secondary-600 bg-gradient-to-r py-16">
+      <section className="bg-gradient-to-r from-primary-600 to-secondary-600 py-16">
         <div className="container-custom text-center">
           <div className="mx-auto max-w-3xl space-y-8">
             <h2 className="text-4xl font-bold text-white">
               Ready to Start Your Learning Journey?
             </h2>
-            <p className="text-primary-100 text-xl">
+            <p className="text-xl text-primary-100">
               Join thousands of learners and unlock your potential today.
             </p>
             <Button
               variant="contained"
               size="large"
               onClick={() => navigate("/courses")}
-              className="!text-primary-600 shadow-large !bg-white !px-8 !py-4 !text-lg hover:!bg-gray-100"
+              className="!bg-white !px-8 !py-4 !text-lg !text-primary-600 shadow-large hover:!bg-gray-100"
             >
               Get Started Now
             </Button>
