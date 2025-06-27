@@ -79,7 +79,7 @@ function HomePage() {
                       </div>
                       <div>
                         <h3 className="font-semibold text-gray-900">
-                          Interactive Learning
+                          Admin Account
                         </h3>
                         <p className="text-sm text-gray-600">
                           Real-time progress tracking
@@ -90,19 +90,13 @@ function HomePage() {
                       <div className="flex items-center gap-3">
                         <div className="h-3 w-3 rounded-full bg-success-500"></div>
                         <span className="text-sm text-gray-700">
-                          Expert instructors
+                          Email: phamdanng559@gmail.com
                         </span>
                       </div>
                       <div className="flex items-center gap-3">
                         <div className="h-3 w-3 rounded-full bg-success-500"></div>
                         <span className="text-sm text-gray-700">
-                          Flexible learning schedule
-                        </span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <div className="h-3 w-3 rounded-full bg-success-500"></div>
-                        <span className="text-sm text-gray-700">
-                          Certificate upon completion
+                          Password: 123123
                         </span>
                       </div>
                     </div>
