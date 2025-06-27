@@ -138,12 +138,12 @@ const CourseDescription = () => {
   return (
     <div className="course-description min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="from-primary-600 to-secondary-600 bg-gradient-to-r py-16">
+      <section className="bg-gradient-to-r from-primary-600 to-secondary-600 py-16">
         <div className="container-custom">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             {/* Course Image */}
             <div className="relative">
-              <div className="shadow-large relative overflow-hidden rounded-3xl">
+              <div className="relative overflow-hidden rounded-3xl shadow-large">
                 <img
                   src={`${import.meta.env.VITE_API_URL}/${course.image}`}
                   alt={course.title}
@@ -153,8 +153,8 @@ const CourseDescription = () => {
 
                 {/* Play Button Overlay */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="shadow-large flex h-20 w-20 items-center justify-center rounded-full bg-white/90">
-                    <PlayIcon className="text-primary-600 text-3xl" />
+                  <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white/90 shadow-large">
+                    <PlayIcon className="text-3xl text-primary-600" />
                   </div>
                 </div>
               </div>
@@ -170,19 +170,19 @@ const CourseDescription = () => {
                 <h1 className="text-4xl font-bold leading-tight text-white md:text-5xl">
                   {course.title}
                 </h1>
-                <p className="text-primary-100 text-xl leading-relaxed">
+                <p className="text-xl leading-relaxed text-primary-100">
                   {course.description}
                 </p>
               </div>
 
               {/* Instructor Info */}
               <div className="flex items-center gap-4">
-                <Avatar className="!bg-primary-100 !text-primary-600 !h-12 !w-12">
+                <Avatar className="!h-12 !w-12 !bg-primary-100 !text-primary-600">
                   <PersonIcon />
                 </Avatar>
                 <div>
                   <p className="font-medium text-white">{course.createdBy}</p>
-                  <p className="text-primary-100 text-sm">Course Instructor</p>
+                  <p className="text-sm text-primary-100">Course Instructor</p>
                 </div>
               </div>
 
@@ -200,7 +200,7 @@ const CourseDescription = () => {
                       </div>
                       <div>
                         <p className="font-medium text-white">{stat.value}</p>
-                        <p className="text-primary-100 text-sm">{stat.label}</p>
+                        <p className="text-sm text-primary-100">{stat.label}</p>
                       </div>
                     </div>
                   );
@@ -221,8 +221,8 @@ const CourseDescription = () => {
               <Card className="card">
                 <CardContent className="p-8">
                   <div className="mb-6 flex items-center gap-3">
-                    <div className="bg-primary-100 flex h-10 w-10 items-center justify-center rounded-xl">
-                      <TrendingIcon className="text-primary-600 text-xl" />
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary-100">
+                      <TrendingIcon className="text-xl text-primary-600" />
                     </div>
                     <div>
                       <Typography
@@ -240,7 +240,7 @@ const CourseDescription = () => {
                   <div className="grid gap-4 md:grid-cols-2">
                     {whatYouWillLearn.map((item, index) => (
                       <div key={index} className="flex items-start gap-3">
-                        <CheckIcon className="text-success-500 mt-0.5 text-lg" />
+                        <CheckIcon className="mt-0.5 text-lg text-success-500" />
                         <span className="text-gray-700">{item}</span>
                       </div>
                     ))}
@@ -252,8 +252,8 @@ const CourseDescription = () => {
               <Card className="card">
                 <CardContent className="p-8">
                   <div className="mb-6 flex items-center gap-3">
-                    <div className="bg-secondary-100 flex h-10 w-10 items-center justify-center rounded-xl">
-                      <DescriptionIcon className="text-secondary-600 text-xl" />
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-secondary-100">
+                      <DescriptionIcon className="text-xl text-secondary-600" />
                     </div>
                     <div>
                       <Typography
@@ -292,8 +292,8 @@ const CourseDescription = () => {
                       const Icon = feature.icon;
                       return (
                         <div key={index} className="flex items-start gap-4">
-                          <div className="bg-primary-100 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl">
-                            <Icon className="text-primary-600 text-xl" />
+                          <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-primary-100">
+                            <Icon className="text-xl text-primary-600" />
                           </div>
                           <div>
                             <Typography
@@ -320,10 +320,10 @@ const CourseDescription = () => {
             {/* Pricing Sidebar */}
             <div className="space-y-6">
               {/* Pricing Card */}
-              <Card className="card sticky top-8">
+              <Card className="card top-8">
                 <CardContent className="p-6">
                   <div className="space-y-4 text-center">
-                    <div className="bg-primary-100 text-primary-700 inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium">
+                    <div className="inline-flex items-center gap-2 rounded-full bg-primary-100 px-4 py-2 text-sm font-medium text-primary-700">
                       <StarIcon className="text-warning-500" />
                       Best Value
                     </div>
@@ -398,6 +398,7 @@ const CourseDescription = () => {
                           fullWidth
                           className="btn-secondary"
                           startIcon={<PlayIcon />}
+                          onClick={() => navigate(`/lectures/${course._id}`)}
                         >
                           Preview Course
                         </Button>
@@ -431,7 +432,7 @@ const CourseDescription = () => {
                         <span>5 stars</span>
                         <div className="mx-2 h-2 flex-1 rounded-full bg-gray-200">
                           <div
-                            className="bg-warning-500 h-2 rounded-full"
+                            className="h-2 rounded-full bg-warning-500"
                             style={{ width: "85%" }}
                           ></div>
                         </div>
@@ -441,7 +442,7 @@ const CourseDescription = () => {
                         <span>4 stars</span>
                         <div className="mx-2 h-2 flex-1 rounded-full bg-gray-200">
                           <div
-                            className="bg-warning-500 h-2 rounded-full"
+                            className="h-2 rounded-full bg-warning-500"
                             style={{ width: "12%" }}
                           ></div>
                         </div>
@@ -451,7 +452,7 @@ const CourseDescription = () => {
                         <span>3 stars</span>
                         <div className="mx-2 h-2 flex-1 rounded-full bg-gray-200">
                           <div
-                            className="bg-warning-500 h-2 rounded-full"
+                            className="h-2 rounded-full bg-warning-500"
                             style={{ width: "3%" }}
                           ></div>
                         </div>

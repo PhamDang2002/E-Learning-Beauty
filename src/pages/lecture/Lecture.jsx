@@ -9,7 +9,7 @@ import {
 } from "@services/rootApi";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./lecture.css";
 import {
   Button,
@@ -54,17 +54,13 @@ const Lecture = () => {
   const [video, setVideo] = useState("");
   const [videoPrev, setVideoPrev] = useState("");
   const [btnLoading, setBtnLoading] = useState(false);
-  const navigate = useNavigate();
+
   const [completed, setCompleted] = useState("");
   const [completedLec, setCompletedLec] = useState("");
   const [lectLength, setLectLength] = useState("");
   const [progressLec, setProgressLec] = useState([]);
   const [progress] = useAddProgressMutation();
   const { data, refetch } = useFetchProgressQuery({ course: params.id });
-
-  if (user && user.role !== "admin" && !user.subscription.includes(params.id)) {
-    navigate("/");
-  }
 
   const OnSubmit = (lectureId) => {
     setId(lectureId);
@@ -153,8 +149,8 @@ const Lecture = () => {
         <div className="container-custom">
           <div className="mb-6 flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <div className="bg-primary-100 flex h-12 w-12 items-center justify-center rounded-xl">
-                <TrendingIcon className="text-primary-600 text-xl" />
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary-100">
+                <TrendingIcon className="text-xl text-primary-600" />
               </div>
               <div>
                 <Typography variant="h5" className="font-bold text-gray-900">
@@ -184,7 +180,7 @@ const Lecture = () => {
               <span className="text-sm font-medium text-gray-700">
                 Overall Progress
               </span>
-              <span className="text-primary-600 text-lg font-bold">
+              <span className="text-lg font-bold text-primary-600">
                 {Math.round(completed) || 0}%
               </span>
             </div>
@@ -282,8 +278,8 @@ const Lecture = () => {
               <Card className="card">
                 <CardContent className="p-6">
                   <div className="mb-4 flex items-center gap-3">
-                    <div className="bg-primary-100 flex h-10 w-10 items-center justify-center rounded-xl">
-                      <SchoolIcon className="text-primary-600 text-xl" />
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary-100">
+                      <SchoolIcon className="text-xl text-primary-600" />
                     </div>
                     <div>
                       <Typography
@@ -310,15 +306,15 @@ const Lecture = () => {
                             className={`cursor-pointer rounded-xl border-2 p-4 transition-all duration-200 ${
                               isActive
                                 ? "border-primary-500 bg-primary-50"
-                                : "hover:border-primary-300 border-gray-200 hover:bg-gray-50"
+                                : "border-gray-200 hover:border-primary-300 hover:bg-gray-50"
                             }`}
                             onClick={() => OnSubmit(lec._id)}
                           >
                             <div className="flex items-start gap-3">
                               <div className="flex-shrink-0">
                                 {isCompleted ? (
-                                  <div className="bg-success-100 flex h-8 w-8 items-center justify-center rounded-full">
-                                    <DoneAll className="text-success-600 text-sm" />
+                                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-success-100">
+                                    <DoneAll className="text-sm text-success-600" />
                                   </div>
                                 ) : (
                                   <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-100">
@@ -386,13 +382,13 @@ const Lecture = () => {
                     </div>
                     <div className="flex items-center justify-between">
                       <span className="text-gray-600">Completed</span>
-                      <span className="text-success-600 font-semibold">
+                      <span className="font-semibold text-success-600">
                         {completedLec || 0}
                       </span>
                     </div>
                     <div className="flex items-center justify-between">
                       <span className="text-gray-600">Remaining</span>
-                      <span className="text-warning-600 font-semibold">
+                      <span className="font-semibold text-warning-600">
                         {(courseCount || 0) - (completedLec || 0)}
                       </span>
                     </div>
@@ -451,7 +447,7 @@ const Lecture = () => {
                 accept="video/*"
                 onChange={changeVideoHandler}
                 required
-                className="focus:ring-primary-500 w-full rounded-xl border border-gray-200 p-3 focus:border-transparent focus:ring-2"
+                className="w-full rounded-xl border border-gray-200 p-3 focus:border-transparent focus:ring-2 focus:ring-primary-500"
               />
             </div>
             {videoPrev && (
