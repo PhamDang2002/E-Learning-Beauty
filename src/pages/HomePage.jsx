@@ -90,13 +90,13 @@ function HomePage() {
                       <div className="flex items-center gap-3">
                         <div className="h-3 w-3 rounded-full bg-success-500"></div>
                         <span className="text-sm text-gray-700">
-                          Email: phamdanng559@gmail.com
+                          Email: phamdang559@gmail.com
                         </span>
                       </div>
                       <div className="flex items-center gap-3">
                         <div className="h-3 w-3 rounded-full bg-success-500"></div>
                         <span className="text-sm text-gray-700">
-                          Password: 123123
+                          Password: 123456@
                         </span>
                       </div>
                     </div>
